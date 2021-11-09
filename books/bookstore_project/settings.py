@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     # 'users'
 ]
 
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = int(os.environ.get('DEBUG', default=0))
 
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'
