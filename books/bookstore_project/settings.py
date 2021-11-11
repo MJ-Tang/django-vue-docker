@@ -47,11 +47,15 @@ INSTALLED_APPS = [
     # local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
     # 'users'
 ]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = int(os.environ.get('DEBUG', default=0))
+
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'
